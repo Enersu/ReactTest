@@ -1,18 +1,20 @@
 import React from 'react'
-import  classes from './Product.module.css'
+import '../../../../index.css'
 
-const Product = props => {
-    return(
-        <div className={classes['product-container']}>
-            <div className={classes.banner}>{props.name}</div>
-            <div>{props.image}</div>
-            <div className={classes.description}>Описание</div>
-            <div className={classes.text}>{props.text}</div>
-            <span className={classes.price}>{props.price}</span>
-            <span className={classes.value}>{props.value}</span>
-            <button className={classes.button}>В корзину</button>
-        </div>
-    );
+class Product extends React.Component {
+    render() {
+        return(
+            <div className="productContainer">
+                <div className="banner">{this.props.name}</div>
+                <div>{this.props.image}</div>
+                <div className="description">Описание</div>
+                <div className="text">{this.props.text}</div>
+                <span className="price">{this.props.price}</span>
+                <span className="value">{this.props.value}</span>
+                <button className="button" onClick={()=>this.props.addProduct(this.props.id)}>В корзину</button>
+            </div>
+        )
+    }
 };
 
 export default Product;

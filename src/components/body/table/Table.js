@@ -8,7 +8,7 @@ class Table extends Component {
     return (
         <div>
           {products.map((product, index) => {
-            return <Product key = {index}{...product}/>;
+            return <Product key = {index}{...product} addProduct={this.props.addProduct}/>;
           })}
         </div>
       );
