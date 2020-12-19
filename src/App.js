@@ -7,27 +7,30 @@ import Basket from './components/body/basket/Basket';
 
 class App extends Component {
   state = {
-    basket: new Map(),
+    basket: [],
   }
   addProductToCart=(id)=>{
-    const productFromCart = this.state.basket.get(id);
-    this.setState(() => this.state.basket.set(id, {amount: productFromCart ? productFromCart.amount + 1 : 1}))
-  }
+    const productFromCart = this.state.basket.find(item => item.id === id);
+
+    if (productFromCart) {
+      productFromCart.amount += 1;
+      this.setState((state) => ({basket: [...state.basket]})); 
+    }else{
+      const newProduct = {id, amount: 1};
+      this.setState((state) => ({basket: [...state.basket, newProduct]})); 
+      console.log(this.state.basket)
+    }
+  };
+
+  clearBasket = () => this.setState(()=>({basket: []}));
+    
   render() {
   return (
       <div>
         <div>
           <Header className="App"/>
-        </div>
-        <div style={{
-          marginLeft: 50,
-          marginRight: 700,
-          marginTop: 10
-          }}>
-          <Table addProduct={this.addProductToCart.bind(this)}/>
-        </div>
-        <div>
-          <Basket basket={this.state.basket}/>
+          <Table addProduct={this.addProductToCart.bind(this)}/>  
+          <Basket basket={this.state.basket} clearBasket={this.clearBasket.bind(this)}/>
         </div>
       </div>
     );
