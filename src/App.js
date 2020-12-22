@@ -12,13 +12,20 @@ class App extends Component {
   addProductToCart=(id)=>{
     const productFromCart = this.state.basket.find(item => item.id === id);
 
-    if (productFromCart) {
-      productFromCart.amount += 1;
-      this.setState((state) => ({basket: [...state.basket]})); 
+    if(productFromCart) {
+      const newBasket = this.state.basket.map((existed) => {
+        if(existed.id !== id) {
+          return existed
+        }
+        return {
+          ...existed,
+          amount: existed.amount + 1
+        }
+      });
+      this.setState({basket: newBasket});
     }else{
       const newProduct = {id, amount: 1};
       this.setState((state) => ({basket: [...state.basket, newProduct]})); 
-      console.log(this.state.basket)
     }
   };
 
@@ -29,8 +36,8 @@ class App extends Component {
       <div>
         <div>
           <Header className="App"/>
-          <Table addProduct={this.addProductToCart.bind(this)}/>  
-          <Basket basket={this.state.basket} clearBasket={this.clearBasket.bind(this)}/>
+          <Table addProduct={this.addProductToCart}/>  
+          <Basket basket={this.state.basket} clearBasket={this.clearBasket}/>
         </div>
       </div>
     );
