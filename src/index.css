@@ -1,4 +1,4 @@
-.App {
+.app {
   text-align: center;
 }
 
@@ -21,12 +21,25 @@ code {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14);
   border-radius: 5px;
 }
+
+.positionBasket {
+  position: fixed;
+  margin-left: 900px;
+  margin-top: 300px;
+}
+
 .banner {
   font-size: 30px;
   margin-left: 20px;
   margin-top: 10px;
   margin-bottom: 20px;
 }
+
+.content-wrapper {
+  display: flex;
+  margin-left: 50px;
+}
+
 .description {
   font-size: 25px;
   margin-left: 20px;

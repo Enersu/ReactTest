@@ -34,10 +34,14 @@ class App extends Component {
   render() {
   return (
       <div>
-        <div>
-          <Header className="App"/>
-          <Table addProduct={this.addProductToCart}/>  
+        <div className="app">
+          <Header/>
+        </div>
+        <div className="content-wrapper" >
+          <Table addProduct = {this.addProductToCart}/> 
+          <div className="positionBasket">
           <Basket basket={this.state.basket} clearBasket={this.clearBasket}/>
+          </div>
         </div>
       </div>
     );

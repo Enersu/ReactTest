@@ -1,6 +1,7 @@
 import {Component} from 'react';
 import BasketItem from './BasketItem';
 import products from '../../../mock';
+import './../../../index.css'
 
 
 class Basket extends Component {
@@ -11,7 +12,7 @@ class Basket extends Component {
         const basket =this.props.basket || [];
 
         return(
-            <div>
+            <div className='basketDiv'>
                 <h1 className='header'>Корзина</h1>
                 <ul> 
                     {basket.map(item => (<BasketItem 
