@@ -1,11 +1,10 @@
-import { Component } from 'react';
+import React from 'react';
 
 
-class Header extends Component {
-  render() {
+function Header(){
   return (
       <h1>Категория "фрукты"</h1>
     );
   }
-}
 export default Header;
+ 

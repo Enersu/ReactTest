@@ -1,12 +1,11 @@
-import {Component} from 'react';
+import React from 'react';
 
-class BasketItem extends Component {
-    getCost = () => Math.floor(this.props.item.amount * this.props.product.price);
-    render() {
+
+function BasketItem (props) {
+    const getCost = () => Math.floor(props.item.amount * props.product.price); 
         return(
-            <li>{this.props.product.name} - {this.props.item.amount} кг/шт - {this.getCost()} руб</li>
+            <li>{props.product.name} - {props.item.amount} кг/шт - {getCost()} руб</li>
         );
-    }
-};
-
+    };
+    
 export default BasketItem
