@@ -38,7 +38,7 @@ function App () {
       <div className="content-wrapper" >
         <Table addProduct = {addProductToCart}/> 
       <div className="positionBasket">
-        <Basket basket={count.basket} clearBasket={clearBasket}/>
+        <Basket basket={count.basket} clearBasket={clearBasket} />
       </div>
       </div>
     </div>

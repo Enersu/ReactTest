@@ -6,7 +6,7 @@ function Product(props) {
     return(
         <div className="productContainer">
             <div className="banner">{props.name}</div>
-            <div>{props.image}</div>
+            <div><img className="image" src={props.image} alt=''></img></div>
             <div className="description">Описание</div>
             <div className="text">{props.text}</div>
             <span className="price">{props.price}</span>

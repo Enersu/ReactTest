@@ -1,14 +1,15 @@
 import React from 'react';
 import BasketItem from './BasketItem';
-import products from '../../../mock';
+// import products from '../../../mock';
 import './../../../index.css'
+
 
 
 function Basket (props) {
     const getProductInfo =(id) => {
-        return products.find(product => product.id === id)
+        return props.products.find(product => product.id === id)
     };
-    const basket =props.basket || [];
+    const basket =  props.basket || [];
         return(
             <div className='basketDiv'>
                 <h1 className='header'>Корзина</h1>

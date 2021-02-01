@@ -56,6 +56,11 @@ code {
   margin-left: 20px;
 }
 
+.image {
+  max-width: 400px;
+  max-height: 400px;
+}
+
 .value {
   font-size: 20px;
 }
